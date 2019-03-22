@@ -2,14 +2,14 @@ public class MyDeque<E>{
   private E[] data;
   private int size, start, end;
 
+  @SuppressWarnings("unchecked")
   public MyDeque(){
-    @SuppressWarnings("unchecked")
-    E[] d = (E[])new Object[10];
-    data = d;
+    data = (E[])new Object[10];
   }
 
+  @SuppressWarnings("unchecked")
   public MyDeque(int initialCapacity){
-
+    data = (E[])new Object[initialCapacity];
   }
 
   public int size(){
