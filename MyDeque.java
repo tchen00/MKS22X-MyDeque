@@ -37,25 +37,25 @@ public class MyDeque<E>{
 
   public void addFirst(E element){
     // throwing exception if element is not null
-    if (element == null) throw new NullPointException("exception from addFirst");
+    if (element == null) throw new NullPointerException("exception from addFirst");
   }
 
   public void addLast(E element){
     // throwing exception if element is not null
-    if (element == null) throw new NullPointException("exception from addLast");
+    if (element == null) throw new NullPointerException("exception from addLast");
 
   }
 
   public E removeFirst(){
     // throwing exception if data set is empty
     if (size() == 0) throw new NoSuchElementException("from removeFirst");
-
+    return data[0];
   }
 
   public E removeLast(){
     // throwing exception if data set is empty
     if (size() == 0) throw new NoSuchElementException("from removeLast");
-
+    return data[0];
   }
 
   public E getFirst(){
