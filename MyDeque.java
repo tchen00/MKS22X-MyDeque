@@ -35,7 +35,7 @@ public class MyDeque<E>{
   }
 
   public void addLast(E element){
-    if (element == null) throw new NullPointException("exception from addLast"); 
+    if (element == null) throw new NullPointException("exception from addLast");
 
   }
 
@@ -48,11 +48,13 @@ public class MyDeque<E>{
   }
 
   public E getFirst(){
-
+    if (size() == 0) throw new NoSuchElementException("from getFirst");
+    return data[start];
   }
 
   public E getLast(){
-
+    if (size() == 0) throw new NoSuchElementException("from getLast");
+    return data[end];
   }
 
 }
