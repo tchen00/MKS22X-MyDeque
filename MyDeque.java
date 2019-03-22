@@ -2,9 +2,10 @@ public class MyDeque<E>{
   private E[] data;
   private int size, start, end;
 
-  @SuppressWarnings("unchecked") 
   public MyDeque(){
-    data = (E[])new Object[10];
+    @SuppressWarnings("unchecked")
+    E[] d = (E[])new Object[10];
+    data = d;
   }
 
   public MyDeque(int initialCapacity){
@@ -41,6 +42,6 @@ public class MyDeque<E>{
 
   public E getLast(){
 
-
   }
+
 }
