@@ -40,10 +40,12 @@ public class MyDeque<E>{
   }
 
   public E removeFirst(){
+    if (size() == 0) throw new NoSuchElementException("from removeFirst");
 
   }
 
   public E removeLast(){
+    if (size() == 0) throw new NoSuchElementException("from removeLast");
 
   }
 
