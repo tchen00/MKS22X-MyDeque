@@ -5,26 +5,37 @@ public class MyDeque<E>{
   @SuppressWarnings("unchecked")
   public MyDeque(){
     data = (E[])new Object[10];
+    start = 0;
+    end = 1;
+    size = data.length;
   }
 
   @SuppressWarnings("unchecked")
   public MyDeque(int initialCapacity){
     data = (E[])new Object[initialCapacity];
+    start = 0;
+    end = 1;
+    size = initialCapacity;
   }
 
   public int size(){
-
+    return size;
   }
 
   public String toString(){
-
+    String output = "{";
+    for (int i = 0; i < data.length; i++){
+      output += data[i] + " ";
+    }
+    return output + "}";
   }
 
   public void addFirst(E element){
-
+    if (element == null) throw new NullPointException("exception from addFirst");
   }
 
   public void addLast(E element){
+    if (element == null) throw new NullPointException("exception from addLast"); 
 
   }
 
