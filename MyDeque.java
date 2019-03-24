@@ -73,4 +73,18 @@ public class MyDeque<E>{
     return data[end]; // returns end
   }
 
+  @SuppressWarnings("unchecked")
+  private void resize(){
+    //making sure theres enough room in the temp array so og * 2 + 1
+    E[] temp = (E[]) new Object[size() * 2 + 1];
+    int index = start;
+    for (int i = 0; i < size; i++){
+      // copying elements over from og array
+      temp[i] = data[index % data.length];
+      index++;
+    }
+    start = 0;
+    end = size - 1;
+    data = temp;
+  }
 }
