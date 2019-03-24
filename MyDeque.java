@@ -75,7 +75,16 @@ public class MyDeque<E>{
   public E removeFirst(){
     // throwing exception if data set is empty
     if (size() == 0) throw new NoSuchElementException("from removeFirst");
-    return data[0];
+    E og = data[start]; //stores original element
+    data[start] = null;
+    // if size is not 1 start doesnt change
+    if (size != 1){
+      // if start is at the end of the array
+      if (start == data.length - 1) start = 0;
+      else start++; 
+    }
+    size--;
+    return og;
   }
 
   public E removeLast(){
