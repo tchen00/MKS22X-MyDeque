@@ -41,19 +41,35 @@ public class MyDeque<E>{
   public void addFirst(E element){
     // throwing exception if element is not null
     if (element == null) throw new NullPointerException("exception from addFirst");
+    // if array is filled in already
     if (size == data.length) resize();
+    // if size is not zero ...
     if (size != 0){
+      // if start is at the start of the array
       if (start == 0) start = data.length - 1;
       else start--;
     }
+    // add in first element
     data[start] = element;
+    // increase size
     size++;
   }
 
   public void addLast(E element){
     // throwing exception if element is not null
     if (element == null) throw new NullPointerException("exception from addLast");
-
+    // if array is filled in already
+    if (size == data.length) resize();
+    // if size is not zero ...
+    if (size != 0){
+      // if end is at the end of the array
+      if (end == data.length - 1) end = 0;
+      else end++;
+    }
+    // adding in last element
+    data[end] = element;
+    //increase size
+    size++;
   }
 
   public E removeFirst(){
