@@ -9,28 +9,31 @@ public class MyDeque<E>{
   @SuppressWarnings("unchecked")
   public MyDeque(){
     data = (E[])new Object[10];
-    start = 0;
-    end = 1;
-    size = data.length;
+    //start = 0;
+    //end = 1;
+    //size = data.length;
   }
 
   // constructer and going pass warnings (if given size)
   @SuppressWarnings("unchecked")
   public MyDeque(int initialCapacity){
     data = (E[])new Object[initialCapacity];
-    start = 0;
-    end = 1;
-    size = initialCapacity;
+    //start = 0;
+    //end = 1;
+    //size = initialCapacity;
   }
 
   public int size(){
     return size;
   }
 
+  // standard toString
   public String toString(){
     String output = "{";
-    for (int i = start; i < data.length; i++){
-      output += data[i] + " ";
+    int index = start;
+    for (int i = 0; i < size; i++){
+      output += data[index % data.length] + " ";
+      index++;
     }
     return output + "}";
   }
@@ -61,13 +64,13 @@ public class MyDeque<E>{
   public E getFirst(){
     // throwing exception if data set is empty
     if (size() == 0) throw new NoSuchElementException("from getFirst");
-    return data[start];
+    return data[start]; // returns start
   }
 
   public E getLast(){
     // throwing exception if data set is empty
     if (size() == 0) throw new NoSuchElementException("from getLast");
-    return data[end];
+    return data[end]; // returns end
   }
 
 }
