@@ -8,11 +8,13 @@ public class Calculator{
 
       for (String value: split){
         // addition
-        if (value.equals("+")){
-          // adding the last two 
-          stack.addLast(stack.removeLast() + stack.removeLast());
+        if (value.equals("+")) stack.addLast(stack.removeLast() + stack.removeLast());
+        // subtraction
+        else if (value.equals("-")){
+            double second = stack.removeLast();
+            double first = stack.removeLast();
+            stack.addLast(first - second);
         }
-
 
     }
 }
