@@ -15,6 +15,23 @@ public class Calculator{
             double first = stack.removeLast();
             stack.addLast(first - second);
         }
-
+        // multiplication
+        else if (value.equals("*")) stack.addLast(stack.removeLast() * stack.removeLast());
+        // division
+        else if (value.equals("/")){
+            double second = stack.removeLast();
+            double first = stack.removeLast();
+            stack.addLast(first / second);
+        }
+        // mod
+        else if (value.equals("%")){
+            double second = stack.removeLast();
+            double first = stack.removeLast();
+            stack.addLast(first % second);
+        }
+        else{
+            stack.addLast(Double.parseDouble(value));
+        }
+      } return stack.getFirst();
     }
 }
