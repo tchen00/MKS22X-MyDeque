@@ -30,8 +30,11 @@ public class Calculator{
             stack.addLast(first % second);
         }
         else{
+            // if not symbol/operation
             stack.addLast(Double.parseDouble(value));
         }
-      } return stack.getFirst();
+      }
+      // return solution
+      return stack.getFirst();
     }
 }
